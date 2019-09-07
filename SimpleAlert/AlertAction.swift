@@ -5,7 +5,7 @@
 //  Created by Kyohei Ito on 2016/09/12.
 //  Copyright © 2016年 kyohei_ito. All rights reserved.
 //
-
+//minor changes
 open class AlertAction {
     public enum Style {
         case `default`
