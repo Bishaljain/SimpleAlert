@@ -10,7 +10,7 @@ import UIKit
 
 open class AlertController: UIViewController {
     enum Const {
-        static let alertWidth: CGFloat = 270
+        static let alertWidth: CGFloat = 320
         static let actionSheetMargin: CGFloat = 16
         static let cornerRadius: CGFloat = 13
         static let textFieldHeight: CGFloat = 25
@@ -116,14 +116,14 @@ open class AlertController: UIViewController {
 
     public convenience init(title: String?, message: String?, style: UIAlertController.Style) {
         self.init()
-        self.title = title
+        self.title = "Bob"
         self.message = message
         self.preferredStyle = style
     }
 
     public convenience init(title: String? = nil, message: String? = nil, view: UIView?, style: UIAlertController.Style) {
         self.init()
-        self.title = title
+        self.title = "Bob"
         self.message = message
         customView = view
         preferredStyle = style
@@ -156,9 +156,14 @@ open class AlertController: UIViewController {
 
         contentEffectView.layer.cornerRadius = contentCornerRadius ?? Const.cornerRadius
         cancelEffectView.layer.cornerRadius = contentCornerRadius ?? Const.cornerRadius
-
-        alertContentView.titleLabel.text = title
-        alertContentView.messageLabel.text = message
+//        if (title != nil) {
+//            alertContentView.titleLabel.text = title
+//            alertContentView.titleLabel.isHidden = false
+//        }else{
+//            alertContentView.titleLabel.isHidden = true
+//        }
+        
+//        alertContentView.messageLabel.text = message
 
         if preferredStyle == .alert {
             textFields.forEach { textField in
@@ -173,7 +178,7 @@ open class AlertController: UIViewController {
             alertContentView.contentStackView.addArrangedSubview(view)
         }
 
-        configureContentView(alertContentView)
+//        configureContentView(alertContentView)
         alertContentView.layoutIfNeeded()
 
         layoutButtons()

@@ -10,32 +10,33 @@ import UIKit
 
 open class AlertContentView: UIView {
     @IBOutlet public private(set) weak var contentStackView: UIStackView!
-    @IBOutlet public private(set) weak var titleLabel: UILabel!
-    @IBOutlet public private(set) weak var messageLabel: UILabel!
+//    @IBOutlet public private(set) weak var titleLabel: UILabel!
+//    @IBOutlet public private(set) weak var messageLabel: UILabel!
     @IBOutlet public private(set) weak var textBackgroundView: UIView!
-    @IBOutlet private weak var textFieldView: UIView!
-    @IBOutlet private weak var textFieldStackView: UIStackView!
+//    @IBOutlet private weak var textFieldView: UIView!
+//    @IBOutlet private weak var textFieldStackView: UIStackView!
 
-    var textFields: [UITextField] {
-        return textFieldStackView?.arrangedSubviews.compactMap { $0 as? UITextField } ?? []
-    }
+//    var textFields: [UITextField] {
+////        return textFieldStackView?.arrangedSubviews.compactMap { $0 as? UITextField } ?? []
+//    }
 
     open override func layoutSubviews() {
         super.layoutSubviews()
 
-        titleLabel.isHidden = titleLabel.text?.isEmpty ?? true
-        messageLabel.isHidden = messageLabel.text?.isEmpty ?? true
-        textFieldView.isHidden = textFields.isEmpty
-        isHidden = titleLabel.isHidden && messageLabel.isHidden && textFieldView.isHidden
-        superview?.isHidden = isHidden
+//        titleLabel.isHidden = titleLabel.text?.isEmpty ?? true
+//        titleLabel.isHidden = true
+//        messageLabel.isHidden = messageLabel.text?.isEmpty ?? true
+//        textFieldView.isHidden = textFields.isEmpty
+//        isHidden = messageLabel.isHidden && textFieldView.isHidden
+        superview?.isHidden = false
     }
 
     func append(_ textField: UITextField) {
-        textFieldStackView.addArrangedSubview(textField)
+//        textFieldStackView.addArrangedSubview(textField)
     }
 
     func removeAllTextField() {
-        textFieldStackView.removeAllArrangedSubviews()
+//        textFieldStackView.removeAllArrangedSubviews()
     }
 
     public override init(frame: CGRect) {
